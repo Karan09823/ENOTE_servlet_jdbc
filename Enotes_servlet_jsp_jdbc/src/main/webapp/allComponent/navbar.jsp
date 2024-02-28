@@ -40,7 +40,7 @@
 
 
 			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-				data-bs-target="#exampleModal"><%=usd.getId()%></button>
+				data-bs-target="#exampleModal"><%=usd.getName()%></button>
 			<span class="mx-2"></span> <a href="logoutServlet"
 				class="btn btn-outline-light my-2 my-sm-0"> <i
 				class="fa-solid fa-right-from-bracket"></i><span> </span>Logout
