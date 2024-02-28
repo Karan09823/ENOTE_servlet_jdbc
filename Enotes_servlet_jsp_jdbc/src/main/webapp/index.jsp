@@ -5,6 +5,8 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="com.Db.DBConnection"%>
 
+<%@include file="allComponent/allcomponent.jsp"%>
+<%@include file="allComponent/navbar.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,24 +26,26 @@
 }
 
 .an {
-	color: dark;
+	color:red;
+	
+	
 }
 
 .ani {
-	color: red;
+	color:orange;
+	background-color:cyan;
 }
 </style>
 
 <title>Enotes_IndexPage</title>
 </head>
 <body>
-	<%@include file="allComponent/allcomponent.jsp"%>
-	<%@include file="allComponent/navbar.jsp"%>
+
 	<div class="container-fluid bg-img">
 		<div class="text-center">
 			<br> <br>
 			<h1 class="an">ENOTES</h1>
-			<marquee class="ani">
+			<marquee  class="ani">
 				<h2>Save Your Important Notes !</h2>
 			</marquee>
 		</div>
