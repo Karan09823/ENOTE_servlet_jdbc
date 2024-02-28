@@ -7,25 +7,25 @@
 <%@page import="com.User.UserPost"%>
 
 
-<%
-UserData userN = (UserData) session.getAttribute("loggedinUserName");
-
-if (userN == null) {
-	response.sendRedirect("login.jsp");
-	session.setAttribute("addNoteLoginError", "Please login First !");
-}
-%>
+<%@include file="allComponent/navbar.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>EDIT_NOTE</title>
 <%@include file="allComponent/allcomponent.jsp"%>
 <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+	<%
+	UserData userN = (UserData) session.getAttribute("loggedinUserName");
 
-	<%@include file="allComponent/navbar.jsp"%>
+	if (userN == null) {
+		response.sendRedirect("login.jsp");
+		session.setAttribute("addNoteLoginError", "Please login First !");
+	} else {
+	%>
+
 	<%
 	int noteid = Integer.parseInt(request.getParameter("note_id"));// note_id present in showNotes.jsp 
 
@@ -52,10 +52,10 @@ if (userN == null) {
 							<input type="hidden" value="<%=noteid%>" name="noteid">
 
 							<div class="mb-3">
-								<label for="NoteTitle" class="form-label"><%=pos.getTitle()%></label>
-								<input type="email" class="form-control" id="NoteTitle"
+								<label for="NoteTitle" class="form-label"></label>
+								<input type="text" class="form-control" id="NoteTitle"
 									aria-describedby="notetitle" name="EditNoteTitle"
-									required="required">
+									required="required" value="<%=pos.getTitle()%>">
 
 							</div>
 
@@ -84,6 +84,12 @@ if (userN == null) {
 		</div>
 	</div>
 
+
+
+
+	<%
+	}
+	%>
 
 
 
