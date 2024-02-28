@@ -22,7 +22,7 @@ public class AddNoteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String usid=req.getParameter("loggedinUserid");
-		int userid = Integer.parseInt(usid.trim());
+		int userid = Integer.parseInt(usid);
 
 		String NoteTitle = req.getParameter("InNoteTitle");
 		String NoteContent = req.getParameter("InNoteContent");
