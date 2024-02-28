@@ -1,31 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-<%
-UserData userN = (UserData) session.getAttribute("loggedinUserName");
 
-if (userN == null) {
-	response.sendRedirect("login.jsp");
-	session.setAttribute("addNoteLoginError", "Please login First !");
-}
-%>
-
+<%@include file="allComponent/navbar.jsp"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>ADD_NOTE</title>
 <%@include file="allComponent/allcomponent.jsp"%>
 <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
-	<%@include file="allComponent/navbar.jsp"%>
 
 
+	<%
+	UserData userN = (UserData) session.getAttribute("loggedinUserName");
 
+	if (userN == null) {
+		session.setAttribute("addNoteLoginError", "Please login First !");
+		response.sendRedirect("login.jsp");
 
+	} else {
+	%>
 	<div class="container mt-5">
 
 		<div class="row">
@@ -37,20 +36,9 @@ if (userN == null) {
 					<div class="card-body">
 						<form action="AddNoteServlet" method="post">
 
-							<%
-							UserData ul = (UserData) session.getAttribute("loggedinUserName"); // when a user is logged in  then a id is assigned to a user
 
-							if (ul != null) {
-							%>
-
-							<input type="hidden" value="<%=ul.getId()%>"
+							<input type="hidden" value="<%=userN.getId()%>"
 								name="loggedinUserid">
-
-							<%
-							}
-							%>
-
-
 
 							<div class="mb-3">
 								<label for="NoteTitle" class="form-label">Title</label> <input
@@ -84,6 +72,13 @@ if (userN == null) {
 
 		</div>
 	</div>
+
+
+
+	<%
+	}
+	%>
+
 
 
 
