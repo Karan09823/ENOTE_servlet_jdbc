@@ -59,9 +59,10 @@ public class PostDAO {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				usp = new UserPost();
-				usp.setId(rs.getInt("id"));
-				usp.setTitle(rs.getString("title"));
-				usp.setContent(rs.getString("content"));
+				usp.setId(rs.getInt(1));
+				usp.setTitle(rs.getString(2));
+				usp.setContent(rs.getString(3));
+				
 
 				li.add(usp);
 			}
@@ -91,9 +92,9 @@ public class PostDAO {
 			if (rs.next()) {
 
 				p = new UserPost();
-				p.setId(rs.getInt("id"));
-				p.setTitle(rs.getString("title"));
-				p.setContent(rs.getString("content"));
+				p.setId(rs.getInt(1));
+				p.setTitle(rs.getString(2));
+				p.setContent(rs.getString(3));
 			}
 
 		} catch (Exception e) {
