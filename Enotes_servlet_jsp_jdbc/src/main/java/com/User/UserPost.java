@@ -8,7 +8,7 @@ public class UserPost {
 	private String title;
 	private String content;
 	private Date ndate;
-	private UserData user;
+	private int uid;
 	
 	
 	
@@ -16,13 +16,13 @@ public class UserPost {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public UserPost(int id, String title, String content, Date ndate, UserData user) {
+	public UserPost(int id, String title, String content, Date ndate, int uid) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.ndate = ndate;
-		this.user = user;
+		this.uid = uid;
 	}
 	
 	
@@ -50,11 +50,11 @@ public class UserPost {
 	public void setNdate(Date ndate) {
 		this.ndate = ndate;
 	}
-	public UserData getUser() {
-		return user;
+	public int getUid() {
+		return uid;
 	}
-	public void setUser(UserData user) {
-		this.user = user;
+	public void setUid(int uid) {
+		this.uid = uid;
 	}
 	
 	
