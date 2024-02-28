@@ -22,13 +22,12 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// taking data from the user
-		String username=req.getParameter("logineUserName");
+		
 		String email = req.getParameter("loginemail");
 		String password = req.getParameter("loginpassword");
 
 		// storing user data into userdata object
 		UserData ud = new UserData();
-		ud.setName(username);
 		ud.setEmail(email);
 		ud.setPassword(password);
 
