@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+<%@include file="allComponent/allcomponent.jsp"%>
+<%@include file="allComponent/navbar.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +14,7 @@
 <title>Enotes_RegisterPage</title>
 </head>
 <body>
-	<%@include file="allComponent/allcomponent.jsp"%>
-	<%@include file="allComponent/navbar.jsp"%>
+
 
 	<div class="container-fluid ">
 		<div class="row">
@@ -23,6 +25,11 @@
 
 						<h2>REGISTER</h2>
 					</div>
+
+
+
+
+					<!--================================================================  -->
 					<%
 					String MsgSucess = (String) session.getAttribute("reg-sucess");
 
@@ -33,7 +40,13 @@
 					session.removeAttribute("reg-sucess");
 					}
 					%>
+					<!--================================================================  -->
 
+
+
+
+
+					<!--================================================================  -->
 					<%
 					String MsgFail = (String) session.getAttribute("reg-fail");
 					if (MsgFail != null) {
@@ -43,7 +56,10 @@
 					session.removeAttribute("reg-fail");
 					}
 					%>
-
+					<!--================================================================  -->
+					
+					
+					
 					<div class="card-body">
 						<form action="RegisterServlet" method="post">
 							<div class="mb-3">
