@@ -22,9 +22,9 @@
 
 						<h2>LOGIN</h2>
 					</div>
-					<%
-					//==start=================================================================
-					%>
+
+
+					<!-- =============================================================================== -->
 					<%
 					String loginfailMsg = (String) session.getAttribute("login-fail");
 
@@ -37,13 +37,13 @@
 					session.removeAttribute("login-fail");
 					}
 					%>
-					<%
-					//==end======================================================================
-					%>
+
+					<!-- =============================================================================== -->
 
 
 
 
+					<!-- =============================================================================== -->
 
 					<%
 					String logoutmsg = (String) session.getAttribute("logoutMsg");
@@ -61,12 +61,13 @@
 
 
 
+					<!-- =============================================================================== -->
 
 
 
-					<%
-					//==start=============================================================
-					%>
+
+
+					<!-- =============================================================================== -->
 
 					<%
 					String addNoteErrorMsg = (String) session.getAttribute("addNoteLoginError");
@@ -81,21 +82,11 @@
 					}
 					%>
 
-					<%
-					//==end==============================================================
-					%>
+					<!-- =============================================================================== -->
+
+
 					<div class="card-body">
 						<form action="LoginServlet" method="post">
-							<div class="mb-3">
-								<label for="exampleUserName" class="form-label">Username
-								</label> <input type="text" class="form-control"
-									id="exampleInputUserName" aria-describedby="UserNameHelp"
-									name="logineUserName">
-
-							</div>
-
-
-
 
 							<div class="mb-3">
 								<label for="exampleInputEmail1" class="form-label">Email
